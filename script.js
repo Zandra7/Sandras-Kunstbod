@@ -22,7 +22,6 @@ function lagBilder() {
             document.getElementById("tilfeldigBilde").src = imageUrl;
             tilfeldigRotasjon()
         });
-
 }
 
 function OppgraderUtstyr() {
@@ -34,7 +33,6 @@ function OppgraderUtstyr() {
         bilderPerKlikk += 1
     }
 }
-
 
 function tilfeldigRotasjon() {
     const randomDegree = Math.floor(Math.random() * 180);
