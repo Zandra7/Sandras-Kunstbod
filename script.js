@@ -29,7 +29,7 @@ function OppgraderUtstyr() {
         penger -= OppgraderUtstyrPris
         document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
         OppgraderUtstyrPris *= 2
-        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris:' + OppgraderUtstyrPris + ' $'
+        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris: ' + OppgraderUtstyrPris + ' $'
         bilderPerKlikk += 1
     }
 }
