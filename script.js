@@ -1,5 +1,25 @@
 let bilder = 0
+let bilderPerKlikk = 1
 let penger = 0
+
+let OppgraderUtstyrPris = 50
+
+function selgBilder() {
+    penger += bilder
+    document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
+    bilder -= bilder
+    document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder + ' $'
+}
+
+function OppgraderUtstyr() {
+    if (penger >= OppgraderUtstyrPris) {
+        penger -= OppgraderUtstyrPris
+        document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
+        OppgraderUtstyrPris *= 2
+        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris:' + OppgraderUtstyrPris + ' $'
+
+    }
+}
 
 function lagBilder() {
     bilder ++;
@@ -13,13 +33,6 @@ function lagBilder() {
             tilfeldigRotasjon()
         });
 
-}
-
-function selgBilder() {
-    penger += bilder
-    document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
-    bilder -= bilder
-    document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder + ' $'
 }
 
 function tilfeldigRotasjon() {
