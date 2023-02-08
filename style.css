@@ -5,3 +5,9 @@ h1 {
 main {
     margin: 2vw 5vw;
 }
+
+#tilfeldigBilde {
+    display: block;
+    width: 200px;
+    margin: -8vw 68vw;
+}
