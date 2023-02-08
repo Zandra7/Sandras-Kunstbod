@@ -1,5 +1,16 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 main {
     margin: 2vw 5vw;
+    font-size: larger;
+}
+
+button {
+    font-weight: bold;
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1 {
