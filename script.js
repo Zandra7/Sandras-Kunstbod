@@ -2,7 +2,7 @@ let bilder = 0
 let bilderPerKlikk = 1
 let penger = 0
 
-let OppgraderUtstyrPris = 50
+let OppgraderUtstyrPris = 40
 
 function selgBilder() {
     penger += bilder
@@ -11,18 +11,8 @@ function selgBilder() {
     document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder + ' $'
 }
 
-function OppgraderUtstyr() {
-    if (penger >= OppgraderUtstyrPris) {
-        penger -= OppgraderUtstyrPris
-        document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
-        OppgraderUtstyrPris *= 2
-        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris:' + OppgraderUtstyrPris + ' $'
-
-    }
-}
-
 function lagBilder() {
-    bilder ++;
+    bilder += bilderPerKlikk;
     document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder + ' $'
     fetch("https://source.unsplash.com/random")
         .then(function(response) {
@@ -34,6 +24,17 @@ function lagBilder() {
         });
 
 }
+
+function OppgraderUtstyr() {
+    if (penger >= OppgraderUtstyrPris) {
+        penger -= OppgraderUtstyrPris
+        document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
+        OppgraderUtstyrPris *= 2
+        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris:' + OppgraderUtstyrPris + ' $'
+        bilderPerKlikk += 1
+    }
+}
+
 
 function tilfeldigRotasjon() {
     const randomDegree = Math.floor(Math.random() * 180);
