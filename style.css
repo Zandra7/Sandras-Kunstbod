@@ -44,6 +44,11 @@ h1 {
     width: 100%;
 }
 
+.pris {
+    text-align: center;
+    margin-bottom: 1%;
+}
+
 /* .knapper {
     background-color: antiquewhite;
 }

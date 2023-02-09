@@ -24,6 +24,7 @@ function selgBilder() {
 function lagBilder() {
     bilder += bilderPerKlikk; // Legger til antall bilderPerKlikk (variabelen) til bilder
     document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder // Oppdater teksten som har id = 'BilderPåLager'
+    document.getElementById('tilfeldigBilde').style.display = "block" // Viser bildet
     fetch("https://source.unsplash.com/random") // Henter tilfeldig bilde fra Unsplash
         .then(function(response) {
             return response.url;
