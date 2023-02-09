@@ -32,32 +32,34 @@ function lagBilder() {
             tilfeldigRotasjon() // Kjører funksjon som roterer bildet med tilfeldig tall
         });
 }
+
 // 'Oppgrader utstyr' knapp
 function OppgraderUtstyr() {
     if (penger >= OppgraderUtstyrPris) { // Hvis penger er høyere enn OppgraderUtstyrPris (variabelen)
         penger -= OppgraderUtstyrPris // Fjern tallet OppgraderUtstyrPris (variabelen) fra penger (variabelen)
         document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $' // Oppgrader teksten med id 'AntallPenger'
-        OppgraderUtstyrPris *= 2 // Øker prisen med * 2
+        OppgraderUtstyrPris *= 2 // Øker prisen på knappen med *2
         document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris: ' + OppgraderUtstyrPris + ' $' // Oppdaterer teksten med id 'OppgraderUtstyrPris
         bilderPerKlikk += 1 // Legger til 1 hver gang du klikker
     }
 }
 
+// 'Ansette folk' knapp
 function AnsetteFolk() {
-    if (penger >= AnsettePris) {
-        penger -= AnsettePris
-        document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $'
-
-        setInterval(function() {
-            bilder += 1;
-            document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder
-        }, 1500);
-        AnsettePris *= 2
-        document.getElementById('AnsettePris').innerHTML = 'Pris: ' + AnsettePris + ' $'
+    if (penger >= AnsettePris) { // Hvis penger er høyere enn AnsettePris (variabelen)
+        penger -= AnsettePris // Fjern tallet AnsettePris (variabelen) fra penger
+        document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $' // Oppdater teksten med id 'AntallPenger'
+        setInterval(function() { // Setter tid på 1,5 sekunder
+            bilder += 1; // Legger til 1 til bilder hvert 1,5 sekunder
+            document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder // Oppdaterer teksen med id 'BilderPåLager'
+        }, 1500); //1500 = 1,5 sek
+        AnsettePris *= 2 // Øker prisen på knappen med *2
+        document.getElementById('AnsettePris').innerHTML = 'Pris: ' + AnsettePris + ' $' // Opdaterer teksten med id 'AnsettePris'
     }
 }
 
-function tilfeldigRotasjon() {
-    const randomDegree = Math.floor(Math.random() * 180);
-    document.getElementById("tilfeldigBilde").style.transform = `rotate(${randomDegree}deg)`;
+// Snur bildet med et tilfeldig tall
+function tilfeldigRotasjon() { 
+    const randomDegree = Math.floor(Math.random() * 180); // Velger et tilfeldig tall
+    document.getElementById("tilfeldigBilde").style.transform = `rotate(${randomDegree}deg)`; // Oppdaterer rotasjonen til bildet
 }
