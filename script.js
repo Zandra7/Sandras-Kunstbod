@@ -49,6 +49,11 @@ function OppgraderUtstyr() {
         OppgraderUtstyrPris *= 2 // Øker prisen på knappen med *2
         document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris: ' + OppgraderUtstyrPris + ' $' // Oppdaterer teksten som har id = 'OppgraderUtstyrPris
         bilderPerKlikk += 1 // Legger til 1 hver gang du klikker
+    } else { // Hvis man ikke har nok penger
+        document.getElementById('OppgraderUtstyrPris').innerHTML = 'Du har ikke nok penger!' // Oppdaterer teksten som har id = 'OppgraderUtstyrPris' til 'Du har ikke nok penger!'
+        setTimeout(function() { // Setter timer på 1 sekund
+            document.getElementById('OppgraderUtstyrPris').innerHTML = 'Pris: ' + OppgraderUtstyrPris + ' $' // Oppdaterer teksten som har id = 'OppgraderUtstyrPris'
+        }, 1000); // 1000 = 1 sek
     }
 }
 
@@ -63,6 +68,11 @@ function AnsetteFolk() {
         }, 1500); //1500 = 1,5 sek
         AnsettePris *= 2 // Øker prisen på knappen med *2
         document.getElementById('AnsettePris').innerHTML = 'Pris: ' + AnsettePris + ' $' // Opdaterer teksten som har id = 'AnsettePris'
+    } else { // Hvis man ikke har nok penger
+        document.getElementById('AnsettePris').innerHTML = 'Du har ikke nok penger!' // Oppdaterer teksten som har id = 'AnsettePris' til 'Du har ikke nok penger!'
+        setTimeout(function() { // Setter timer på 1 sekund
+            document.getElementById('AnsettePris').innerHTML = 'Pris: ' + AnsettePris + ' $' // Oppdaterer teksten som har id = 'AnsettePris'
+        }, 1000); // 1000 = 1 sek
     }
 }
 
@@ -77,7 +87,14 @@ function selgAutomatisk() {
                 bilder -= 1 // Trekker ifra 1 fra bilder
                 document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $' // Oppdater teksten som har id = 'AntallPenger'
                 document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder // Oppdaterer teksten som har id = 'BilderPåLager'
+                selgAutomatiskPris *= 2 // Øker prisen på knappen med *2
+                document.getElementById('SelgAutomatiskPris').innerHTML = 'Pris: ' + selgAutomatiskPris + ' $' // Oppdaterer teksten som har id = 'SelgAutomatiskPris'
             }
         }, 1000) // 1000 = 1 sek
+    } else { // Hvis man ikke har nok penger
+        document.getElementById('SelgAutomatiskPris').innerHTML = 'Du har ikke nok penger!' // Oppdaterer teksten som har id = 'SelgAutomatiskPris' til 'Du har ikke nok penger!'
+        setTimeout(function() { // Setter timer på 1 sekund
+            document.getElementById('SelgAutomatiskPris').innerHTML = 'Pris: ' + selgAutomatiskPris + ' $' // Oppdaterer teksten som har id = 'SelgAutomatiskPris'
+        }, 1000); // 1000 = 1 sek
     }
 }
