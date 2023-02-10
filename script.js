@@ -87,10 +87,10 @@ function selgAutomatisk() {
                 bilder -= 1 // Trekker ifra 1 fra bilder
                 document.getElementById('AntallPenger').innerHTML = 'Penger: ' + penger + ' $' // Oppdater teksten som har id = 'AntallPenger'
                 document.getElementById('BilderPåLager').innerHTML = 'Bilder på lager: ' + bilder // Oppdaterer teksten som har id = 'BilderPåLager'
-                selgAutomatiskPris *= 2 // Øker prisen på knappen med *2
-                document.getElementById('SelgAutomatiskPris').innerHTML = 'Pris: ' + selgAutomatiskPris + ' $' // Oppdaterer teksten som har id = 'SelgAutomatiskPris'
             }
         }, 1000) // 1000 = 1 sek
+        selgAutomatiskPris *= 2 // Øker prisen på knappen med *2
+        document.getElementById('SelgAutomatiskPris').innerHTML = 'Pris: ' + selgAutomatiskPris + ' $' // Oppdaterer teksten som har id = 'SelgAutomatiskPris'
     } else { // Hvis man ikke har nok penger
         document.getElementById('SelgAutomatiskPris').innerHTML = 'Du har ikke nok penger!' // Oppdaterer teksten som har id = 'SelgAutomatiskPris' til 'Du har ikke nok penger!'
         setTimeout(function() { // Setter timer på 1 sekund
